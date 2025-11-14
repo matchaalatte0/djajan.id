@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kategori - Djajan</title>
+  <style>
+ body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    /* 🌸 Tambahkan background baru dengan overlay lembut */
+    background:
+      linear-gradient(rgba(245, 232, 220, 0.88), rgba(245, 232, 220, 0.88)),
+      url('WhatsApp Image 2025-11-13 at 18.52.39.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* agar tetap saat di-scroll */
+    background-repeat: no-repeat;
+    color: #4b2e1e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+    header {
+      background-color: #8b5a2b;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #d4a373;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff3e0;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffd58a;
+    }
+
+    main {
+      flex: 1;
+      padding: 30px 20px 70px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+    /* Grid kategori */
+    .kategori-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    .kategori-item {
+      background-color: #fff8f2;
+      border-radius: 20px;
+      padding: 35px 25px;
+      width: 200px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .kategori-item:hover {
+      transform: translateY(-8px) scale(1.05);
+      background-color: #ffe8cc;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .kategori-item span {
+      font-size: 60px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .kategori-item p {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* Footer navigasi */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #8b5a2b;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 2px solid #d4a373;
+    }
+
+    .bottom-nav a {
+      color: #fff3e0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .bottom-nav a.active {
+      color: #ffd58a;
+    }
+
+    /* Animasi */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DJAJAN</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="kategori.html" class="active">Kategori</a>
+      <a href="info.html">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Pilih Kategori Jajanan</h2>
+    <div class="kategori-grid">
+      <div class="kategori-item" onclick="location.href='makanan.html'">
+        <span>🍜</span>
+        <p>Makanan</p>
+      </div>
+
+      <div class="kategori-item" onclick="location.href='snack.html'">
+        <span>🍪</span>
+        <p>Snack</p>
+      </div>
+
+      <div class="kategori-item" onclick="location.href='minuman.html'">
+        <span>☕</span>
+        <p>Minuman</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="kategori.html" class="active">Kategori</a>
+    <a href="info.html">Info Wonosobo</a>
+  </footer>
+</body>
+</html>

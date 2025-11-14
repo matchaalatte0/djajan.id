@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Info Penjual - Djajan</title>
+  <style>
+    /* 🎨 Tema Umum */
+ body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    /* 🌸 Tambahkan background baru dengan overlay lembut */
+    background:
+      linear-gradient(rgba(245, 232, 220, 0.88), rgba(245, 232, 220, 0.88)),
+      url('WhatsApp Image 2025-11-13 at 18.52.39.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* agar tetap saat di-scroll */
+    background-repeat: no-repeat;
+    color: #4b2e1e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+    /* 🟤 Header */
+    header {
+      background-color: #8b5a2b;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #d4a373;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff3e0;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffd58a;
+    }
+
+    /* 🧁 Konten Utama */
+    main {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 10px;
+      margin-bottom: 30px;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6f3c1f;
+      text-align: center;
+    }
+
+    /* 🍩 Kartu Informasi */
+    .info-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      justify-content: center;
+      align-items: stretch;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .info-card {
+      background-color: #fff8f2;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      animation: fadeIn 0.8s ease;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .info-card img {
+      width: 100%;
+      height: 200px; /* Ukuran gambar seragam */
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .info-card h3 {
+      margin: 0 0 5px;
+      color: #8b5a2b;
+      font-size: 18px;
+    }
+
+    .info-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 5px 0;
+    }
+
+    /* 📱 Navigasi Bawah */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #8b5a2b;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 2px solid #d4a373;
+    }
+
+    .bottom-nav a {
+      color: #fff3e0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .bottom-nav a.active,
+    .bottom-nav a:hover {
+      color: #ffd58a;
+    }
+
+    /* 🌟 Animasi */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DJAJAN</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="info.html" class="active">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Informasi Penjual Jajanan Khas Wonosobo</h2>
+
+    <div class="info-container">
+      <div class="info-card">
+        <img src="pak.jpeg" alt="Warung Mie Ongklok Pak Muh">
+        <h3>Warung Mie Ongklok Pak Muh</h3>
+        <p><strong>Alamat:</strong> Jl. A. Yani No. 17, Wonosobo</p>
+        <p><strong>Menu Unggulan:</strong> Mie Ongklok, Sate Sapi</p>
+        <p>Warung legendaris yang selalu ramai pengunjung, dikenal karena rasa kuah kacang yang kental dan gurih.</p>
+      </div>
+
+      <div class="info-card">
+        <img src="Toko Oleh-Oleh Carica Larisa.jpg" alt="Toko Oleh-Oleh Carica Larisa">
+        <h3>Toko Oleh-Oleh Carica Larisa</h3>
+        <p><strong>Alamat:</strong> Jl. Dieng Km 3, Kalibeber, Wonosobo</p>
+        <p><strong>Menu Unggulan:</strong> Carica, Kacang Babak</p>
+        <p>Menjual berbagai oleh-oleh khas Wonosobo, terutama Carica yang segar dan dikemas higienis.</p>
+      </div>
+
+      <div class="info-card">
+        <img src="Kedai Wedang Tambi.jpg" alt="Kedai Wedang Tambi">
+        <h3>Kedai Wedang Tambi</h3>
+        <p><strong>Alamat:</strong> Komplek Wisata Tambi, Kec. Kejajar</p>
+        <p><strong>Menu Unggulan:</strong> Wedang Jahe, Teh Tambi</p>
+        <p>Kedai kecil di area perkebunan teh, cocok untuk bersantai sambil menikmati pemandangan hijau pegunungan.</p>
+      </div>
+
+      <div class="info-card">
+        <img src="Sagon Bu Ning.jpg" alt="Sagon Bu Ning">
+        <h3>Sagon Bu Ning</h3>
+        <p><strong>Alamat:</strong> Pasar Wonosobo, Sumberan Barat</p>
+        <p><strong>Menu Unggulan:</strong> Sagon</p>
+        <p>Sagon Bu Ning menjual sagon legendaris khas Wonosobo yang gurih dan lembut.</p>
+      </div>
+
+      <div class="info-card">
+        <img src="Akmalia.jpg" alt="Bubur Candil Akmalia">
+        <h3>Bubur Candil Akmalia</h3>
+        <p><strong>Alamat:</strong> Sudagaran Gg. Sayangmulyo, Wonosobo Timur</p>
+        <p><strong>Menu Unggulan:</strong> Bubur candil dan apem</p>
+        <p>Nikmati lembutnya Bubur Candil Akmalia dengan kuah gula merah dan santan gurih. Manisnya pas, hangatnya menenangkan.</p>
+      </div>
+
+      <div class="info-card">
+        <img src="bu marni.jpg" alt="Nasi Megono Bu Marni">
+        <h3>Nasi Megono Bu Marni</h3>
+        <p><strong>Alamat:</strong> Jl. KH. Abdurrahman Wahid No.Km.1, Kalianget</p>
+        <p><strong>Menu Unggulan:</strong> Nasi Megono</p>
+        <p>Rasakan nikmatnya Nasi Megono Bu Marni, racikan khas Wonosobo dengan bumbu kelapa muda yang gurih dan wangi daun salam.</p>
+      </div>
+
+      <div class="info-card">
+        <img src="Djawa.jpg" alt="Djawa Snack">
+        <h3>Djawa Snack</h3>
+        <p><strong>Alamat:</strong> Jl. Pasukan Ronggolawe No.20, Wonosobo Timur</p>
+        <p><strong>Menu Unggulan:</strong> Berbagai jajanan tradisional</p>
+        <p>Nikmati cita rasa nostalgia dengan Djawa Snack – surganya jajanan tradisional seperti cenil, getuk, dan pisang wolak-walik.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="kategori.html">Kategori</a>
+    <a href="info.html" class="active">Info Wonosobo</a>
+  </footer>
+</body>
+</html>

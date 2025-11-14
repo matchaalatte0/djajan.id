@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJAJAN - Kuliner Wonosobo</title>
+
+  <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    /* 🌸 Tambahkan background baru dengan overlay lembut */
+    background:
+      linear-gradient(rgba(245, 232, 220, 0.88), rgba(245, 232, 220, 0.88)),
+      url('WhatsApp Image 2025-11-13 at 18.52.39.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* agar tetap saat di-scroll */
+    background-repeat: no-repeat;
+    color: #4b2e1e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+    header {
+      background-color: #8b5a2b;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #d4a373;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav a {
+      color: #fff3e0;
+      margin: 0 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffd58a;
+    }
+
+    /* 🔙 Tombol kembali ke start */
+    .home-icon {
+      font-size: 22px;
+      background-color: #d4a373;
+      color: #4b2e1e;
+      border-radius: 50%;
+      padding: 6px 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .home-icon:hover {
+      background-color: #fff3e0;
+      transform: scale(1.1);
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .search-box {
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-box input {
+      width: 70%;
+      max-width: 380px;
+      padding: 10px 15px;
+      border-radius: 20px;
+      border: none;
+      background: #fff3e0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 14px;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .search-box input:focus {
+      box-shadow: 0 0 8px rgba(139, 90, 43, 0.4);
+    }
+
+    .search-btn {
+      background-color: #8b5a2b;
+      border: none;
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .search-btn:hover {
+      background-color: #a36b3f;
+      transform: scale(1.1);
+    }
+
+    .search-results {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #fff8f2;
+      padding: 10px;
+      border-radius: 15px;
+      width: 150px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #ffe8cc;
+    }
+
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card p {
+      margin-top: 8px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 30px;
+      width: 100%;
+      background-color: #8b5a2b;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 2px solid #d4a373;
+    }
+
+    .bottom-nav a {
+      color: #fff3e0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .bottom-nav a.active {
+      color: #ffd58a;
+    }
+
+    footer#credits {
+      background-color: #d4a373;
+      text-align: center;
+      color: #4b2e1e;
+      font-size: 14px;
+      padding: 8px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DJAJAN</h1>
+    <nav>
+      <!-- 🔙 Tombol kembali ke halaman awal -->
+      <a href="start.html" class="home-icon" title="Kembali ke Halaman Awal">🏠</a>
+
+      <a href="index.html" class="active">Home</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="info.html">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Temukan Aneka Jajanan Lokal Wonosobo</h2>
+
+    <!-- 🔍 Kolom Pencarian -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Cari jajanan...">
+      <button class="search-btn" id="searchBtn">🔍</button>
+    </div>
+
+    <!-- 📦 Kolom hasil pencarian -->
+    <div id="searchResults" class="search-results">
+      <h3>Hasil Pencarian</h3>
+      <div class="cards" id="productCards"></div>
+      <p id="noResult" style="display:none; margin-top:15px; color:#8b5a2b; font-weight:bold;">
+        Tidak ditemukan hasil 😢
+      </p>
+    </div>
+
+    <!-- 🔥 Produk Populer -->
+    <section class="populer">
+      <h3>Populer di Wonosobo</h3>
+      <div class="cards" id="popularCards"></div>
+    </section>
+  </main>
+
+  <!-- Navigasi bawah -->
+  <div class="bottom-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="kategori.html">Kategori</a>
+    <a href="info.html">Info Wonosobo</a>
+  </div>
+
+  <!-- Footer tambahan -->
+  <footer id="credits">
+    Kelompok 4 Projek Kelas XII-I
+  </footer>
+<script>
+  const allProducts = [
+    { name: "Mie Ongklok", img: "mie ongklok.jpg", link: "makanan.html" },
+    { name: "Tempe Kemul", img: "tempe kemul.jpg", link: "snack.html" },
+    { name: "Nasi Megono", img: "megono.jpg", link: "makanan.html" },
+    { name: "Sagon", img: "sagon.jpg", link: "snack.html" },
+    { name: "Geblek", img: "geblek.jpg", link: "snack.html" },
+    { name: "Jenang Sumsum", img: "jenang sumsum.jpg", link: "makanan.html" },
+    { name: "Carica", img: "carica.jpg", link: "minuman.html" },
+    { name: "Kopi Bowongso", img: "kopi bowowngso.jpg", link: "minuman.html" },
+    { name: "Kopi Purwaceng", img: "purwaceng.jpg", link: "minuman.html" },
+    { name: "Sirup Terong Belanda", img: "sirup terong belanda.jpg", link: "minuman.html" },
+      ];
+
+  const popularProducts = [
+    { name: "Mie Ongklok", img: "mie ongklok.jpg" },
+    { name: "Tempe Kemul", img: "tempe kemul.jpg" },
+    { name: "Carica", img: "carica.jpg" },
+    { name: "Kopi Purwaceng", img: "purwaceng.jpg" }
+  ];
+
+  const searchInput = document.getElementById('searchInput');
+  const searchBtn = document.getElementById('searchBtn');
+  const searchResults = document.getElementById('searchResults');
+  const productCards = document.getElementById('productCards');
+  const popularCards = document.getElementById('popularCards');
+  const noResult = document.getElementById('noResult');
+
+  // Fungsi untuk menampilkan produk pencarian (klik = menuju halaman)
+  function showProducts(products, container) {
+    container.innerHTML = '';
+    products.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <p>${p.name}</p>
+      `;
+      // produk hasil pencarian bisa diklik
+      card.onclick = () => window.location.href = p.link;
+      container.appendChild(card);
+    });
+  }
+
+  // Fungsi untuk menampilkan produk populer (tidak bisa diklik)
+  function showPopularProducts(products, container) {
+    container.innerHTML = '';
+    products.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <p>${p.name}</p>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  // Tampilkan produk populer tanpa fungsi klik
+  showPopularProducts(popularProducts, popularCards);
+
+  // Fungsi pencarian
+  function performSearch() {
+    const keyword = searchInput.value.toLowerCase().trim();
+    productCards.innerHTML = '';
+    
+    if (keyword === '') {
+      searchResults.style.display = 'none';
+      return;
+    }
+
+    const filtered = allProducts.filter(p => p.name.toLowerCase().includes(keyword));
+
+    searchResults.style.display = 'block';
+    if (filtered.length > 0) {
+      showProducts(filtered, productCards);
+      noResult.style.display = 'none';
+    } else {
+      noResult.style.display = 'block';
+    }
+  }
+
+  searchBtn.addEventListener('click', performSearch);
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') performSearch();
+  });
+</script>
+
+ </body>
+</html>

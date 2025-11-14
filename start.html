@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJAJAN - Selamat Datang</title>
+  <style>
+    /* 🌰 Tema warna dan font */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: 
+        linear-gradient(rgba(245, 232, 220, 0.8), rgba(245, 232, 220, 0.8)),
+        url('WhatsApp Image 2025-11-13 at 18.21.07.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #4b2e1e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+      transition: opacity 0.6s ease;
+    }
+
+    .logo-container {
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+      backdrop-filter: blur(2px);
+      background-color: rgba(255, 248, 242, 0.7);
+      padding: 40px 60px;
+      border-radius: 25px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .logo-container img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      background-color: #fff8f2;
+      padding: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-top: 25px;
+      letter-spacing: 2px;
+      color: #8b5a2b;
+      animation: fadeInText 2s ease forwards;
+    }
+
+    p {
+      font-size: 14px;
+      color: #6b4226;
+      margin-top: 5px;
+      opacity: 0.85;
+    }
+
+    .start-btn {
+      margin-top: 40px;
+      background-color: #8b5a2b;
+      color: #fff3e0;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: 0.3s ease;
+      font-weight: bold;
+      text-transform: uppercase;
+      animation: fadeInUp 2s ease forwards;
+    }
+
+    .start-btn:hover {
+      background-color: #a36b3f;
+      transform: scale(1.08);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 13px;
+      color: #4b2e1e;
+      opacity: 0.7;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+    }
+
+    /* 🔈 Tombol musik */
+    .music-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(139, 90, 43, 0.8);
+      color: #fff3e0;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .music-btn:hover {
+      background-color: #a36b3f;
+      transform: scale(1.1);
+    }
+
+    /* ✨ Animasi */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔊 Tombol musik -->
+  <button class="music-btn" id="musicBtn" title="Putar / Jeda Musik">🎵</button>
+
+  <div class="logo-container">
+    <img src="djajan.jpeg" alt="Logo Djajan">
+    <h1>Selamat Datang di DJAJAN</h1>
+    <p>Eksplorasi Kuliner Khas Wonosobo 🍽️</p>
+    <button class="start-btn" onclick="goToHome()">Mulai</button>
+  </div>
+
+  <footer>
+    © 2025 DJAJAN | Kuliner Wonosobo
+  </footer>
+
+  <!-- 🎶 Audio Backsound -->
+  <audio id="backsound" loop>
+    <source src="backsound.mpeg">
+</audio>
+
+  <script>
+    const backsound = document.getElementById('backsound');
+    const musicBtn = document.getElementById('musicBtn');
+
+    let isPlaying = false;
+    backsound.volume = 1.0; // volume lembut
+
+    // 🎵 Fungsi play/pause musik
+    musicBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        backsound.pause();
+        musicBtn.textContent = '🔇';
+      } else {
+        backsound.play();
+        musicBtn.textContent = '🎶';
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // Efek transisi halaman
+    function goToHome() {
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 600);
+    }
+  </script>
+</body>
+</html>

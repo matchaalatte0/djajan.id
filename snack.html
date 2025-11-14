@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snack - Djajan</title>
+  <style>
+ body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    /* 🌸 Tambahkan background baru dengan overlay lembut */
+    background:
+      linear-gradient(rgba(245, 232, 220, 0.88), rgba(245, 232, 220, 0.88)),
+      url('WhatsApp Image 2025-11-13 at 18.52.39.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* agar tetap saat di-scroll */
+    background-repeat: no-repeat;
+    color: #4b2e1e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+    /* 🌰 HEADER */
+    header {
+      background-color: #8b5a2b;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #d4a373;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff3e0;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ffd58a;
+    }
+
+    /* 🍪 KONTEN UTAMA */
+    main {
+      flex: 1;
+      padding: 30px 25px 80px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 35px;
+      letter-spacing: 1px;
+    }
+
+    /* 🌾 GRID PRODUK */
+    .kuliner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 35px;
+      justify-items: center;
+      margin-top: 20px;
+    }
+
+    .kuliner-item {
+      background-color: #fff8f2;
+      border-radius: 15px;
+      padding: 20px;
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 1s ease;
+      text-align: left;
+    }
+
+    .kuliner-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .kuliner-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 14px;
+    }
+
+    .kuliner-item h3 {
+      margin: 8px 0 6px;
+      color: #8b5a2b;
+      font-size: 18px;
+    }
+
+    .kuliner-item p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #4b2e1e;
+      text-align: justify;
+    }
+
+    /* 🌰 FOOTER */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #8b5a2b;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 2px solid #d4a373;
+    }
+
+    .bottom-nav a {
+      color: #fff3e0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .bottom-nav a.active {
+      color: #ffd58a;
+    }
+
+    /* ✨ Animasi */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DJAJAN</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="kategori.html" class="active">Kategori</a>
+      <a href="info.html">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>🍪 Snack Ringan Wonosobo</h2>
+    <div class="kuliner-grid">
+      <div class="kuliner-item">
+        <img src="geblek.jpg" alt="Geblek">
+        <h3>Geblek</h3>
+        <p>Makanan tradisional dari tepung tapioka berbentuk angka delapan, digoreng hingga kenyal dan gurih. Cocok disantap hangat dengan sambal atau kuah kacang.</p>
+      </div>
+
+      <div class="kuliner-item">
+        <img src="tempe kemul.jpg" alt="Tempe Kemul">
+        <h3>Tempe Kemul</h3>
+        <p>Tempe khas Wonosobo yang digoreng dengan balutan adonan tepung dan daun kucai, menghasilkan cita rasa gurih renyah. Nama “kemul” berarti selimut dalam bahasa Jawa.</p>
+      </div>
+
+      <div class="kuliner-item">
+        <img src="kacang dieng.jpg" alt="Kacang Dieng">
+        <h3>Kacang Dieng</h3>
+        <p>Kacang khas Dataran Tinggi Dieng yang berukuran besar, digoreng dengan tepung dan bumbu, menghasilkan tekstur renyah dan rasa gurih yang khas.</p>
+      </div>
+
+      <div class="kuliner-item">
+        <img src="sagon.jpg" alt="Sagon">
+        <h3>Sagon</h3>
+        <p>Kue tradisional dari tepung beras ketan, parutan kelapa, dan gula pasir, dimasak dengan tungku arang hingga harum dan gurih manis.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="kategori.html" class="active">Kategori</a>
+    <a href="info.html">Info Wonosobo</a>
+  </footer>
+</body>
+</html>
