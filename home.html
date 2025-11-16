@@ -6,6 +6,55 @@
   <title>DJAJAN - Kuliner Wonosobo</title>
 
   <style>
+  /* --- ANIMASI MASUK HALAMAN --- */
+  body {
+    opacity: 0;
+    animation: fadeInPage 1s ease forwards;
+  }
+
+  header {
+    animation: slideDown 1s ease forwards;
+  }
+
+  main h2 {
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards;
+    animation-delay: 0.5s;
+  }
+
+  .cards .card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardPop 0.7s ease forwards;
+  }
+
+  /* Animasi berurutan untuk kartu */
+  .cards .card:nth-child(1) { animation-delay: 0.3s; }
+  .cards .card:nth-child(2) { animation-delay: 0.45s; }
+  .cards .card:nth-child(3) { animation-delay: 0.6s; }
+  .cards .card:nth-child(4) { animation-delay: 0.75s; }
+
+  @keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes cardPop {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  /* --- STYLE ASLI HALAMAN (tidak diubah) --- */
   body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -174,11 +223,6 @@
     font-weight: 600;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
   </style>
 </head>
 
@@ -215,6 +259,28 @@
   </section>
 </main>
 
+<!-- 🎵 AUDIO BACKSOUND (lanjut antar halaman) -->
+<audio id="backsound" loop>
+  <source src="backsound.mpeg">
+</audio>
+
+<!-- 🔊 Tombol musik -->
+<button id="musicToggle" 
+style="
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background:#8b5a2b;
+  border:none;
+  color:white;
+  box-shadow:0 3px 10px rgba(0,0,0,0.3);
+  font-size:22px;
+  cursor:pointer;
+">🎵</button>
+
 <!-- 📌 Navigasi bawah -->
 <div class="bottom-nav">
   <a href="home.html" class="active">Home</a>
@@ -226,6 +292,37 @@
 <footer id="credits">Kelompok 4 Projek Kelas XII-I</footer>
 
 <script>
+  /* --- BACKSOUND TETAP NYALA ANTAR HALAMAN --- */
+  const audio = document.getElementById("backsound");
+  const musicBtn = document.getElementById("musicToggle");
+
+  // Jika sebelumnya musik ON → play lagi
+  let musicStatus = localStorage.getItem("musicStatus");
+
+  if (musicStatus === "on") {
+    audio.volume = 1;
+    audio.play();
+    musicBtn.textContent = "🎶";
+  } else {
+    audio.pause();
+    musicBtn.textContent = "🔇";
+  }
+
+  // Toggle tombol musik
+  musicBtn.onclick = () => {
+    if (audio.paused) {
+      audio.play();
+      musicBtn.textContent = "🎶";
+      localStorage.setItem("musicStatus", "on");
+    } else {
+      audio.pause();
+      musicBtn.textContent = "🔇";
+      localStorage.setItem("musicStatus", "off");
+    }
+  };
+
+  /* --- FITUR PENCARIAN ASLI (tidak diubah) --- */
+
   const allProducts = [
     { name: "Mie Ongklok", img: "mie ongklok.jpg", link: "makanan.html" },
     { name: "Tempe Kemul", img: "tempe kemul.jpg", link: "snack.html" },
