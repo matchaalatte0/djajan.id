@@ -137,6 +137,7 @@
   </style>
 </head>
 <body>
+
   <!-- 🔊 Tombol musik -->
   <button class="music-btn" id="musicBtn" title="Putar / Jeda Musik">🎵</button>
 
@@ -151,20 +152,23 @@
     © 2025 DJAJAN | Kuliner Wonosobo
   </footer>
 
-  <!-- 🎶 Audio Backsound -->
-  <audio id="backsound" loop>
+  <!-- 🎶 Audio Backsound AUTOPLAY -->
+  <audio id="backsound" loop autoplay muted playsinline>
     <source src="backsound.mpeg">
-</audio>
+  </audio>
 
   <script>
     const backsound = document.getElementById('backsound');
     const musicBtn = document.getElementById('musicBtn');
 
-    let isPlaying = false;
-    backsound.volume = 1.0; // volume lembut
+    let isPlaying = true;
 
-    // 🎵 Fungsi play/pause musik
+    backsound.volume = 1.0;
+
+    // 🎵 Tombol play/pause
     musicBtn.addEventListener('click', () => {
+      backsound.muted = false; // aktifkan suara saat tombol pertama kali ditekan
+
       if (isPlaying) {
         backsound.pause();
         musicBtn.textContent = '🔇';
@@ -183,6 +187,6 @@
       }, 600);
     }
   </script>
+
 </body>
 </html>
-
