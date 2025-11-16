@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rekomendasi Kuliner - DJAJAN</title>
+
+  <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background:
+      linear-gradient(rgba(245, 232, 220, 0.88), rgba(245, 232, 220, 0.88)),
+      url('WhatsApp Image 2025-11-13 at 18.52.39.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #4b2e1e;
+    min-height: 100vh;
+  }
+
+  header {
+    background-color: #8b5a2b;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #d4a373;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav a {
+    color: #fff3e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  nav a:hover, nav a.active {
+    color: #ffd58a;
+  }
+
+  .home-icon {
+    font-size: 22px;
+    background-color: #d4a373;
+    color: #4b2e1e;
+    border-radius: 50%;
+    padding: 6px 10px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .home-icon:hover {
+    background-color: #fff3e0;
+    transform: scale(1.1);
+  }
+
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  form {
+    background-color: #fff8f2;
+    padding: 20px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    animation: fadeIn 0.6s ease;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: none;
+    border-radius: 10px;
+    background: #fff3e0;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  input[type="file"] {
+    padding: 10px;
+    background: #fff3e0;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #8b5a2b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #a36b3f;
+    transform: scale(1.03);
+  }
+
+  /* 🎉 Animasi terima kasih */
+  #thankYouMessage {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8b5a2b;
+    animation: pop 0.8s ease-out;
+  }
+
+  @keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .bottom-nav {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    background-color: #8b5a2b;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 2px solid #d4a373;
+  }
+
+  .bottom-nav a {
+    color: #fff3e0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .bottom-nav a.active {
+    color: #ffd58a;
+  }
+
+  footer#credits {
+    background-color: #d4a373;
+    text-align: center;
+    color: #4b2e1e;
+    font-size: 14px;
+    padding: 8px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>DJAJAN</h1>
+  <nav>
+    <a href="start.html" class="home-icon">🏠</a>
+    <a href="index.html">Home</a>
+    <a href="kategori.html">Kategori</a>
+    <a href="rekomendasi.html" class="active">Rekomendasi</a>
+    <a href="info.html">Info</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Rekomendasikan Kuliner Wonosobo</h2>
+
+  <form id="rekomForm">
+    <input type="text" placeholder="Nama Usaha" required>
+    <input type="text" placeholder="Alamat" required>
+
+    <select required>
+      <option value="">Jenis Kuliner</option>
+      <option>Makanan</option>
+      <option>Snack</option>
+      <option>Minuman</option>
+      <option>Lainnya</option>
+    </select>
+
+    <label><b>Upload Foto Usaha:</b></label>
+    <input type="file" accept="image/*" required>
+
+    <button type="submit">Kirim Rekomendasi</button>
+  </form>
+
+  <div id="thankYouMessage">🎉 Terima kasih! Rekomendasi kamu sudah terkirim! 🎉</div>
+</main>
+
+<div class="bottom-nav">
+  <a href="index.html">Home</a>
+  <a href="kategori.html">Kategori</a>
+  <a href="rekomendasi.html" class="active">Rekomendasi</a>
+  <a href="info.html">Info</a>
+</div>
+
+<footer id="credits">
+  Kelompok 4 Projek Kelas XII-I
+</footer>
+
+<script>
+  const form = document.getElementById('rekomForm');
+  const thankYou = document.getElementById('thankYouMessage');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // mencegah reload
+
+    form.style.display = "none";   // sembunyikan form
+    thankYou.style.display = "block"; // tampilkan animasi pesan
+  });
+</script>
+
+</body>
+</html>
