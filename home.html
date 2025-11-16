@@ -9,249 +9,222 @@
   body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    /* 🌸 Tambahkan background baru dengan overlay lembut */
     background:
       linear-gradient(rgba(245, 232, 220, 0.88), rgba(245, 232, 220, 0.88)),
       url('WhatsApp Image 2025-11-13 at 18.52.39.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* agar tetap saat di-scroll */
+    background-attachment: fixed;
     background-repeat: no-repeat;
     color: #4b2e1e;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
-    header {
-      background-color: #8b5a2b;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 3px solid #d4a373;
-    }
 
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-      letter-spacing: 1px;
-    }
+  header {
+    background-color: #8b5a2b;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #d4a373;
+  }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+  header h1 {
+    margin: 0;
+    font-size: 22px;
+  }
 
-    nav a {
-      color: #fff3e0;
-      margin: 0 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-    nav a:hover, nav a.active {
-      color: #ffd58a;
-    }
+  nav a {
+    color: #fff3e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
 
-    /* 🔙 Tombol kembali ke start */
-    .home-icon {
-      font-size: 22px;
-      background-color: #d4a373;
-      color: #4b2e1e;
-      border-radius: 50%;
-      padding: 6px 10px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+  nav a:hover,
+  nav a.active {
+    color: #ffd58a;
+  }
 
-    .home-icon:hover {
-      background-color: #fff3e0;
-      transform: scale(1.1);
-    }
+  .home-icon {
+    font-size: 22px;
+    background-color: #d4a373;
+    color: #4b2e1e;
+    border-radius: 50%;
+    padding: 6px 10px;
+    transition: 0.3s;
+  }
 
-    main {
-      flex: 1;
-      padding: 20px;
-      text-align: center;
-    }
+  .home-icon:hover {
+    background-color: #fff3e0;
+    transform: scale(1.1);
+  }
 
-    .search-box {
-      margin: 15px auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-    }
+  main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+  }
 
-    .search-box input {
-      width: 70%;
-      max-width: 380px;
-      padding: 10px 15px;
-      border-radius: 20px;
-      border: none;
-      background: #fff3e0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      font-size: 14px;
-      outline: none;
-      transition: box-shadow 0.3s ease;
-    }
+  .search-box {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
 
-    .search-box input:focus {
-      box-shadow: 0 0 8px rgba(139, 90, 43, 0.4);
-    }
+  .search-box input {
+    width: 70%;
+    max-width: 380px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    background: #fff3e0;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
 
-    .search-btn {
-      background-color: #8b5a2b;
-      border: none;
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      font-size: 18px;
-      transition: 0.3s;
-    }
+  .search-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #8b5a2b;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
 
-    .search-btn:hover {
-      background-color: #a36b3f;
-      transform: scale(1.1);
-    }
+  .search-results {
+    display: none;
+    animation: fadeIn 0.6s ease;
+    margin-top: 20px;
+  }
 
-    .search-results {
-      display: none;
-      margin-top: 20px;
-      animation: fadeIn 0.6s ease;
-    }
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
+  .card {
+    background-color: #fff8f2;
+    padding: 10px;
+    width: 150px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+  }
 
-    .card {
-      background-color: #fff8f2;
-      padding: 10px;
-      border-radius: 15px;
-      width: 150px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, background-color 0.3s;
-      cursor: pointer;
-    }
+  .card:hover {
+    transform: scale(1.05);
+    background-color: #ffe8cc;
+  }
 
-    .card:hover {
-      transform: scale(1.05);
-      background-color: #ffe8cc;
-    }
+  .card img {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
 
-    .card img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+  .bottom-nav {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    background-color: #8b5a2b;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    color: white;
+    border-top: 2px solid #d4a373;
+  }
 
-    .card p {
-      margin-top: 8px;
-      font-weight: bold;
-      text-transform: capitalize;
-    }
+  .bottom-nav a {
+    color: #fff3e0;
+    font-weight: bold;
+    text-decoration: none;
+  }
 
-    .bottom-nav {
-      position: fixed;
-      bottom: 30px;
-      width: 100%;
-      background-color: #8b5a2b;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      border-top: 2px solid #d4a373;
-    }
+  .bottom-nav a.active {
+    color: #ffd58a;
+  }
 
-    .bottom-nav a {
-      color: #fff3e0;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  footer#credits {
+    background-color: #d4a373;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #4b2e1e;
+    font-weight: 600;
+  }
 
-    .bottom-nav a.active {
-      color: #ffd58a;
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    footer#credits {
-      background-color: #d4a373;
-      text-align: center;
-      color: #4b2e1e;
-      font-size: 14px;
-      padding: 8px 0;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>DJAJAN</h1>
-    <nav>
-      <!-- 🔙 Tombol kembali ke halaman awal -->
-      <a href="index.html" class="home-icon" title="Kembali ke Halaman Awal">🏠</a>
 
-      <a href="home.html" class="active">Home</a>
-      <a href="kategori.html">Kategori</a>
-      <a href="info.html">Info</a>
-      <a href="input.html">Rekomendasi</a>
-    </nav>
-  </header>
-
-  <main>
-    <h2>Temukan Aneka Jajanan Lokal Wonosobo</h2>
-
-    <!-- 🔍 Kolom Pencarian -->
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Cari jajanan...">
-      <button class="search-btn" id="searchBtn">🔍</button>
-    </div>
-
-    <!-- 📦 Kolom hasil pencarian -->
-    <div id="searchResults" class="search-results">
-      <h3>Hasil Pencarian</h3>
-      <div class="cards" id="productCards"></div>
-      <p id="noResult" style="display:none; margin-top:15px; color:#8b5a2b; font-weight:bold;">
-        Tidak ditemukan hasil 😢
-      </p>
-    </div>
-
-    <!-- 🔥 Produk Populer -->
-    <section class="populer">
-      <h3>Populer di Wonosobo</h3>
-      <div class="cards" id="popularCards"></div>
-    </section>
-  </main>
-
-  <!-- Navigasi bawah -->
-  <div class="bottom-nav">
-    <a href="index.html" class="active">Home</a>
+<header>
+  <h1>DJAJAN</h1>
+  <nav>
+    <a href="index.html" class="home-icon">🏠</a>
+    <a href="home.html" class="active">Home</a>
     <a href="kategori.html">Kategori</a>
-    <a href="info.html">Info Wonosobo</a>
+    <a href="info.html">Info</a>
+    <a href="input.html">Rekomendasi</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Temukan Aneka Jajanan Lokal Wonosobo</h2>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Cari jajanan...">
+    <button id="searchBtn" class="search-btn">🔍</button>
   </div>
 
-  <!-- Footer tambahan -->
-  <footer id="credits">
-    Kelompok 4 Projek Kelas XII-I
-  </footer>
+  <div id="searchResults" class="search-results">
+    <h3>Hasil Pencarian</h3>
+    <div class="cards" id="productCards"></div>
+    <p id="noResult" style="display:none; color:#8b5a2b; font-weight:bold;">Tidak ada hasil 😢</p>
+  </div>
+
+  <section class="populer">
+    <h3>Populer di Wonosobo</h3>
+    <div class="cards" id="popularCards"></div>
+  </section>
+</main>
+
+<!-- 📌 Navigasi bawah -->
+<div class="bottom-nav">
+  <a href="home.html" class="active">Home</a>
+  <a href="kategori.html">Kategori</a>
+  <a href="info.html">Info</a>
+  <a href="input.html">Rekomendasi</a>
+</div>
+
+<footer id="credits">Kelompok 4 Projek Kelas XII-I</footer>
+
 <script>
   const allProducts = [
     { name: "Mie Ongklok", img: "mie ongklok.jpg", link: "makanan.html" },
@@ -263,8 +236,8 @@
     { name: "Carica", img: "carica.jpg", link: "minuman.html" },
     { name: "Kopi Bowongso", img: "kopi bowowngso.jpg", link: "minuman.html" },
     { name: "Kopi Purwaceng", img: "purwaceng.jpg", link: "minuman.html" },
-    { name: "Sirup Terong Belanda", img: "sirup terong belanda.jpg", link: "minuman.html" },
-      ];
+    { name: "Sirup Terong Belanda", img: "sirup terong belanda.jpg", link: "minuman.html" }
+  ];
 
   const popularProducts = [
     { name: "Mie Ongklok", img: "mie ongklok.jpg" },
@@ -273,74 +246,64 @@
     { name: "Kopi Purwaceng", img: "purwaceng.jpg" }
   ];
 
-  const searchInput = document.getElementById('searchInput');
-  const searchBtn = document.getElementById('searchBtn');
-  const searchResults = document.getElementById('searchResults');
-  const productCards = document.getElementById('productCards');
-  const popularCards = document.getElementById('popularCards');
-  const noResult = document.getElementById('noResult');
+  const productCards = document.getElementById("productCards");
+  const popularCards = document.getElementById("popularCards");
+  const searchResults = document.getElementById("searchResults");
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+  const noResult = document.getElementById("noResult");
 
-  // Fungsi untuk menampilkan produk pencarian (klik = menuju halaman)
   function showProducts(products, container) {
-    container.innerHTML = '';
+    container.innerHTML = "";
     products.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'card';
+      const card = document.createElement("div");
+      card.className = "card";
       card.innerHTML = `
-        <img src="${p.img}" alt="${p.name}">
+        <img src="${p.img}">
         <p>${p.name}</p>
       `;
-      // produk hasil pencarian bisa diklik
       card.onclick = () => window.location.href = p.link;
       container.appendChild(card);
     });
   }
 
-  // Fungsi untuk menampilkan produk populer (tidak bisa diklik)
-  function showPopularProducts(products, container) {
-    container.innerHTML = '';
-    products.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'card';
+  function showPopularProducts() {
+    popularCards.innerHTML = "";
+    popularProducts.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
       card.innerHTML = `
-        <img src="${p.img}" alt="${p.name}">
+        <img src="${p.img}">
         <p>${p.name}</p>
       `;
-      container.appendChild(card);
+      popularCards.appendChild(card);
     });
   }
 
-  // Tampilkan produk populer tanpa fungsi klik
-  showPopularProducts(popularProducts, popularCards);
-
-  // Fungsi pencarian
   function performSearch() {
-    const keyword = searchInput.value.toLowerCase().trim();
-    productCards.innerHTML = '';
-    
-    if (keyword === '') {
-      searchResults.style.display = 'none';
+    const keyword = searchInput.value.toLowerCase();
+    if (!keyword) {
+      searchResults.style.display = "none";
       return;
     }
-
-    const filtered = allProducts.filter(p => p.name.toLowerCase().includes(keyword));
-
-    searchResults.style.display = 'block';
-    if (filtered.length > 0) {
-      showProducts(filtered, productCards);
-      noResult.style.display = 'none';
+    const results = allProducts.filter(p => p.name.toLowerCase().includes(keyword));
+    searchResults.style.display = "block";
+    if (results.length > 0) {
+      noResult.style.display = "none";
+      showProducts(results, productCards);
     } else {
-      noResult.style.display = 'block';
+      productCards.innerHTML = "";
+      noResult.style.display = "block";
     }
   }
 
-  searchBtn.addEventListener('click', performSearch);
-  searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') performSearch();
+  searchBtn.addEventListener("click", performSearch);
+  searchInput.addEventListener("keypress", e => {
+    if (e.key === "Enter") performSearch();
   });
+
+  showPopularProducts();
 </script>
 
- </body>
+</body>
 </html>
-
-
