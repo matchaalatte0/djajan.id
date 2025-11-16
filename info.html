@@ -1,232 +1,227 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rekomendasi Kuliner</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Info Penjual - Djajan</title>
   <style>
-    /* 🎨 Tema & Background */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background:
-        linear-gradient(rgba(245, 232, 220, 0.92), rgba(245, 232, 220, 0.92)),
-        url('WhatsApp Image 2025-11-13 at 18.21.07.jpeg');
-      background-size: cover;
-      background-position: center;
-      color: #4b2e1e;
-      padding-bottom: 90px;
-      animation: fadeIn 1s ease;
-    }
+    /* 🎨 Tema Umum */
+ body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background:
+      linear-gradient(rgba(245, 232, 220, 0.88), rgba(245, 232, 220, 0.88)),
+      url('WhatsApp Image 2025-11-13 at 18.52.39.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #4b2e1e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-    /* 🔝 HEADER */
-    nav {
+    /* 🟤 Header */
+    header {
       background-color: #8b5a2b;
       color: white;
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #d4a373;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 1px;
     }
 
     nav a {
-      color: white;
-      margin: 0 12px;
+      color: #fff3e0;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .home-icon {
-      font-size: 20px;
-    }
-
-    /* 📝 FORM */
-    .form-container {
-      width: 90%;
-      max-width: 500px;
-      background: rgba(255, 248, 242, 0.85);
-      margin: 25px auto;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-      animation: slideUp 1s ease;
-    }
-
-    .form-container h2 {
-      text-align: center;
-      color: #6b3f1f;
-    }
-
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 15px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid #c9a27f;
-      margin-top: 5px;
-      outline: none;
-    }
-
-    input[type="file"] {
-      background: #fff3e4;
-      padding: 10px;
-    }
-
-    button {
-      width: 100%;
-      background: #8b5a2b;
-      color: white;
-      padding: 12px;
-      border: none;
-      font-size: 16px;
-      border-radius: 10px;
-      margin-top: 20px;
-      cursor: pointer;
       transition: 0.3s;
     }
 
-    button:hover {
-      background: #a5673d;
-      transform: scale(1.05);
+    nav a:hover, nav a.active {
+      color: #ffd58a;
     }
 
-    /* 💗 Animasi Terima Kasih */
-    .thankyou {
-      display: none;
+    /* 🧁 Konten Utama */
+    main {
+      flex: 1;
+      padding: 20px;
       text-align: center;
-      margin-top: 20px;
-      color: #6b3f1f;
-      font-size: 20px;
-      font-weight: bold;
-      animation: pop 1s ease forwards;
     }
 
-    @keyframes pop {
-      0% { transform: scale(0.5); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+    h2 {
+      margin-top: 10px;
+      margin-bottom: 30px;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6f3c1f;
+      text-align: center;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    /* 🍩 Kartu Informasi */
+    .info-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .info-card {
+      background-color: #fff8f2;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      animation: fadeIn 0.8s ease;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* ⬇ Bottom Navigation */
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .info-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .info-card h3 {
+      margin: 0 0 5px;
+      color: #8b5a2b;
+      font-size: 18px;
+    }
+
+    .info-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 5px 0;
+    }
+
+    /* 📱 Navigasi Bawah */
     .bottom-nav {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: #8b5a2b;
+      background-color: #8b5a2b;
       display: flex;
       justify-content: space-around;
-      padding: 12px 0;
-      box-shadow: 0 -3px 8px rgba(0,0,0,0.3);
+      padding: 10px 0;
+      border-top: 2px solid #d4a373;
     }
 
     .bottom-nav a {
-      color: white;
+      color: #fff3e0;
       text-decoration: none;
-      font-size: 14px;
-      text-align: center;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .bottom-nav a.active {
-      font-weight: bold;
-      text-decoration: underline;
+    .bottom-nav a.active,
+    .bottom-nav a:hover {
+      color: #ffd58a;
+    }
+
+    /* 🌟 Animasi */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-
 <body>
+  <header>
+    <h1>DJAJAN</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="info.html" class="active">Info</a>
+      <a href="input.html">Rekomendasi</a> <!-- ⭐ DITAMBAHKAN -->
+    </nav>
+  </header>
 
-  <!-- 🔝 NAVBAR -->
-  <nav>
-    <a href="index.html" class="home-icon">🏠</a>
-    <a href="home.html">Home</a>
-    <a href="kategori.html">Kategori</a>
-    <a href="info.html">Info</a>
-    <a href="input.html" class="active">Rekomendasi</a>
-  </nav>
+  <main>
+    <h2>Informasi Penjual Jajanan Khas Wonosobo</h2>
 
-  <!-- 📝 FORM REKOMENDASI -->
-  <div class="form-container">
-    <h2>Rekomendasikan Tempat Kuliner</h2>
+    <div class="info-container">
+      <div class="info-card">
+        <img src="pak.jpeg" alt="Warung Mie Ongklok Pak Muh">
+        <h3>Warung Mie Ongklok Pak Muh</h3>
+        <p><strong>Alamat:</strong> Jl. A. Yani No. 17, Wonosobo</p>
+        <p><strong>Menu Unggulan:</strong> Mie Ongklok, Sate Sapi</p>
+        <p>Warung legendaris yang selalu ramai pengunjung, dikenal karena rasa kuah kacang yang kental dan gurih.</p>
+      </div>
 
-    <form id="rekomForm">
-      <label>Nama Usaha:</label>
-      <input type="text" id="nama" required>
+      <div class="info-card">
+        <img src="Toko Oleh-Oleh Carica Larisa.jpg" alt="Toko Oleh-Oleh Carica Larisa">
+        <h3>Toko Oleh-Oleh Carica Larisa</h3>
+        <p><strong>Alamat:</strong> Jl. Dieng Km 3, Kalibeber, Wonosobo</p>
+        <p><strong>Menu Unggulan:</strong> Carica, Kacang Babak</p>
+        <p>Menjual berbagai oleh-oleh khas Wonosobo, terutama Carica yang segar dan dikemas higienis.</p>
+      </div>
 
-      <label>Alamat:</label>
-      <input type="text" id="alamat" required>
+      <div class="info-card">
+        <img src="Kedai Wedang Tambi.jpg" alt="Kedai Wedang Tambi">
+        <h3>Kedai Wedang Tambi</h3>
+        <p><strong>Alamat:</strong> Komplek Wisata Tambi, Kec. Kejajar</p>
+        <p><strong>Menu Unggulan:</strong> Wedang Jahe, Teh Tambi</p>
+        <p>Kedai kecil di area perkebunan teh, cocok untuk bersantai sambil menikmati pemandangan hijau pegunungan.</p>
+      </div>
 
-      <label>Jenis Kuliner:</label>
-      <select id="jenis" required>
-        <option value="">-- Pilih --</option>
-        <option>Makanan Khas</option>
-        <option>Minuman</option>
-        <option>Street Food</option>
-        <option>Cafe</option>
-        <option>Rumah Makan</option>
-      </select>
+      <div class="info-card">
+        <img src="Sagon Bu Ning.jpg" alt="Sagon Bu Ning">
+        <h3>Sagon Bu Ning</h3>
+        <p><strong>Alamat:</strong> Pasar Wonosobo, Sumberan Barat</p>
+        <p><strong>Menu Unggulan:</strong> Sagon</p>
+        <p>Sagon Bu Ning menjual sagon legendaris khas Wonosobo yang gurih dan lembut.</p>
+      </div>
 
-      <label>Upload Foto Usaha:</label>
-      <input type="file" id="foto" accept="image/*">
+      <div class="info-card">
+        <img src="Akmalia.jpg" alt="Bubur Candil Akmalia">
+        <h3>Bubur Candil Akmalia</h3>
+        <p><strong>Alamat:</strong> Sudagaran Gg. Sayangmulyo, Wonosobo Timur</p>
+        <p><strong>Menu Unggulan:</strong> Bubur candil dan apem</p>
+        <p>Nikmati lembutnya bubur candil Akmalia dengan kuah gula merah dan santan gurih.</p>
+      </div>
 
-      <button type="submit">Kirim Rekomendasi</button>
-    </form>
+      <div class="info-card">
+        <img src="bu marni.jpg" alt="Nasi Megono Bu Marni">
+        <h3>Nasi Megono Bu Marni</h3>
+        <p><strong>Alamat:</strong> Jl. KH. Abdurrahman Wahid No.Km.1, Kalianget</p>
+        <p><strong>Menu Unggulan:</strong> Nasi Megono</p>
+        <p>Nikmatnya megono khas Wonosobo dengan bumbu kelapa muda yang gurih.</p>
+      </div>
 
-    <div class="thankyou" id="thankyouMsg">
-      🎉 Terima kasih atas rekomendasimu! 🎉
+      <div class="info-card">
+        <img src="Djawa.jpg" alt="Djawa Snack">
+        <h3>Djawa Snack</h3>
+        <p><strong>Alamat:</strong> Jl. Pasukan Ronggolawe No.20, Wonosobo Timur</p>
+        <p><strong>Menu Unggulan:</strong> Jajanan tradisional</p>
+        <p>Surganya jajanan tradisional seperti cenil, getuk, pisang wolak-walik, dan lainnya.</p>
+      </div>
     </div>
-  </div>
+  </main>
 
-  <!-- ⬇ BOTTOM NAV -->
   <footer class="bottom-nav">
     <a href="index.html">Home</a>
     <a href="kategori.html">Kategori</a>
-    <a href="info.html">Info</a>
-    <a href="input.html" class="active">Rekomendasi</a>
+    <a href="input.html">Rekomendasi</a> <!-- ⭐ DITAMBAHKAN -->
+    <a href="info.html" class="active">Info Wonosobo</a>
   </footer>
-
-  <script>
-    // 📝 Simpan ke file & tampilkan animasi
-    document.getElementById('rekomForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const nama = document.getElementById('nama').value;
-      const alamat = document.getElementById('alamat').value;
-      const jenis = document.getElementById('jenis').value;
-
-      // Data dikonversi ke format file
-      const content = `Nama Usaha: ${nama}\nAlamat: ${alamat}\nJenis Kuliner: ${jenis}\n\n`;
-
-      const blob = new Blob([content], { type: "text/plain" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "rekomendasi_kuliner.txt";
-      link.click();
-
-      // Tampilkan animasi terima kasih
-      document.getElementById('thankyouMsg').style.display = "block";
-    });
-  </script>
-
 </body>
 </html>
